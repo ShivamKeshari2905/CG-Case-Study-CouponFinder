@@ -1,0 +1,159 @@
+
+<!--<section id="labels">
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="dl">
+              <div class="brand">
+                  <h2>mango</h2>
+              </div>
+              <div class="discount alizarin">30%
+                  <div class="type">off</div>
+              </div>
+              <div class="descr">
+                  <strong>Mei mucius gloriatur reprimique mollis*.</strong> 
+                  Ad sonet perfecto antiopam mei, denique molestie ne has. 
+              </div>
+              <div class="ends">
+                  <small>* Conditions and restrictions apply.</small>
+              </div>
+              <div class="coupon midnight-blue">
+                  <a data-toggle="collapse" href="#code-1" class="open-code">Get a code</a>
+                  <div id="code-1" class="collapse code">LV5MAY14</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div  class="dl">
+              <div class="brand">
+                  <h2>lacoste</h2>
+              </div>
+              <div class="discount emerald">
+                  50%
+                  <div class="type">
+                      off
+                  </div>
+              </div>
+              <div class="descr">
+                  <strong>
+                      Ea per iuvaret ocurreret*. 
+                  </strong> 
+                  sit ea detraxit menandri mediocritatem, in mel dicant mentitum. 
+              </div>
+              <div class="ends">
+                  <small>
+                     * Conditions and restrictions apply.
+                  </small>
+              </div>
+              <div class="coupon midnight-blue">
+                  <a data-toggle="collapse" href="#code-2" class="open-code">Get a code</a>
+                  <div id="code-2" class="collapse in code">
+                      MNO123ST
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div  class="dl">
+              <div class="brand">
+                  <h2>
+                      converse
+                  </h2>
+              </div>
+              <div class="discount peter-river">
+              15%
+                  <div class="type">
+                      off
+                  </div>
+              </div>
+              <div class="descr">
+                  <strong>
+                       Solet consul tractatos ei pro*. 
+                  </strong> 
+                  Ei mei quot invidunt explicari, placerat percipitur intellegam.
+              </div>
+              <div class="ends">
+                  <small>
+                     * Conditions and restrictions apply.
+                  </small>
+              </div>
+              <div class="coupon midnight-blue">
+                  <a data-toggle="collapse" href="#code-3" class="open-code">Get a code</a>
+                  <div id="code-3" class="collapse code">
+                      OLV4SY3R
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div  class="dl">
+              <div class="brand">
+                  <h2>
+                      adidas
+                  </h2>
+              </div>
+              <div class="discount amethyst">
+                  25%
+                  <div class="type">
+                      off
+                  </div>
+              </div>
+              <div class="descr">
+                  <strong>
+                      Cu aliquip persius alterum duo*. 
+                  </strong> 
+                  Possit equidem disputando usu et, sea invidunt scriptorem in. 
+              </div>
+              <div class="ends">
+                  <small>
+                     * Conditions and restrictions apply.
+                  </small>
+              </div>
+              <div class="coupon midnight-blue">
+                  <a data-toggle="collapse" href="#code-4" class="open-code">Get a code</a>
+                  <div id="code-4" class="collapse code">
+                      ZUY4OPLQ
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>-->
+  <div class="card text-center mt-2" *ngIf="coupon">
+    <div class="card-header">
+      <h3>Coupon: {{coupon.couponName || ''}}</h3>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{coupon.couponName}}</h5>
+      <p class="card-text">{{coupon.couponDescription}}</p>
+      <p class="card-text" *ngIf="coupon.couponDiscountType === 'Rs'">Offer: {{coupon.couponDiscountType}} {{coupon.couponDiscount}}</p>
+      <p class="card-text" *ngIf="coupon.couponDiscountType === '%'">Offer: {{coupon.couponDiscount}}{{coupon.couponDiscountType}}</p>
+      <p class="code">{{coupon.couponCode}}</p><br>
+      <a class="btn btn-primary" (click) = "copyToClipboard(coupon.couponCode)" data-toggle="modal" data-target="#myModal">Copy</a>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Code Copied</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      Use this Code In Website While CheckOut
+    </div>
+  </div>
+
+  <div class="card text-center mt-2" *ngIf="!coupon">
+    <div class="card-header">
+      <h3>Uh Oh Seems an error</h3>
+    </div>
+    <div class="card-body">
+      <p class="code">Sorry the coupon code is not available right now!</p><br>
+    </div>
+  </div>

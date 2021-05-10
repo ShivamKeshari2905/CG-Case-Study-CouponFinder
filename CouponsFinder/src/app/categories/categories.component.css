@@ -1,0 +1,9 @@
+.grey-bg {  
+    background-color: #F5F7FA;
+}
+.card{
+    transition: 0.3s ease;
+}
+.card:hover{
+    box-shadow: 0 0 10px 0 black;
+}

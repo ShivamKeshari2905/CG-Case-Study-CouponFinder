@@ -1,0 +1,175 @@
+<div class="container col-md-8 justify-content-md-center">
+  <br /><br />
+  <form
+    class="form"
+    [formGroup]="updatedCoupon"
+    (ngSubmit)="confirmUpdation(updatedCoupon.value)"
+    novalidate=""
+  >
+    <div class="form-group">
+      <img
+        *ngIf="coupon.couponURL"
+        alt="120x60"
+        src="{{ coupon.couponURL }}"
+        id="couponURLPreview"
+        height="250"
+        width="250"
+      />
+      <br /><br />
+      <label for="couponURL">{{ coupon.couponURL }}</label>
+      <br />
+      <input
+        type="file"
+        class="form-control-file"
+        id="exampleFormControlFile1"
+        formControlName="couponURL"
+        value="coupon.couponURL"
+        (change)="getCouponURL($event)"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          updatedCoupon.controls.couponURL.invalid &&
+          (updatedCoupon.controls.couponURL.dirty ||
+            updatedCoupon.controls.couponURL.touched)
+        "
+      >
+        <small class="text text-danger"> Please upload an image URL</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="couponName">Coupon Name</label>
+      <input
+        type="email"
+        class="form-control"
+        id="couponName"
+        formControlName="couponName"
+        value="{{ coupon.couponName }}"
+        required
+      />
+      <div
+        *ngIf="
+          updatedCoupon.controls.couponName.invalid &&
+          (updatedCoupon.controls.couponName.dirty ||
+            updatedCoupon.controls.couponName.touched)
+        "
+      >
+        <small class="text text-danger"
+          >Please enter a coupon Name (Minimum 4 characters)!</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="couponType">Coupon Type</label>
+      <input
+        type="text"
+        class="form-control"
+        id="couponType"
+        placeholder="Category"
+        formControlName="couponType"
+        value="updatedCoupon.couponType"
+        required
+      />
+      <div
+        *ngIf="
+          updatedCoupon.controls.couponType.invalid &&
+          (updatedCoupon.controls.couponType.dirty ||
+            updatedCoupon.controls.couponType.touched)
+        "
+      >
+        <small class="text text-danger"
+          >Please enter a coupon type (Minimum 3 characters)!</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="couponDiscountType">Coupon Discount Type</label>
+      <select
+        class="form-control"
+        id="couponDiscountType"
+        formControlName="couponDiscountType"
+        value="updatedCoupon.couponDiscountType"
+        required
+      >
+        <option value="%">%</option>
+        <option value="Rs">Rs</option>
+      </select>
+      <div
+        *ngIf="
+          updatedCoupon.controls.couponDiscountType.invalid &&
+          (updatedCoupon.controls.couponDiscountType.dirty ||
+            updatedCoupon?.controls?.couponDiscountType?.touched)
+        "
+      >
+        <small class="text text-danger"
+          >Please enter coupon discount type!</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="couponDescription">Coupon Description</label>
+      <textarea
+        class="form-control"
+        id="couponDescription"
+        rows="3"
+        formControlName="couponDescription"
+        value="updatedCoupon.couponDescription"
+        required
+      ></textarea>
+      <div
+        *ngIf="
+          updatedCoupon.controls.couponDescription.invalid &&
+          (updatedCoupon.controls.couponDescription.dirty ||
+            updatedCoupon.controls.couponDescription.touched)
+        "
+      >
+        <small class="text text-danger">Please enter coupon description!</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="couponCode">Coupon Code</label>
+      <input
+        type="text"
+        class="form-control"
+        id="couponCode"
+        placeholder="Enter coupon Code"
+        formControlName="couponCode"
+        value="updatedCoupon.couponCode"
+        required
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          updatedCoupon.controls.couponCode.invalid &&
+          (updatedCoupon.controls.couponCode.dirty ||
+            updatedCoupon.controls.couponCode.touched)
+        "
+      >
+        <small class="text text-danger">
+          Please input a valid coupon code (Minimum 5 characters) !</small
+        >
+      </div>
+    </div>
+
+    <br /><br />
+    <div class="form-group row">
+      <div class="col">
+        <button type="submit" class="btn btn-info btn-block">Update</button>
+      </div>
+      <div class="col">
+        <button
+          type="reset"
+          class="btn btn-danger btn-block"
+          (click)="cancelGoBack()"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
