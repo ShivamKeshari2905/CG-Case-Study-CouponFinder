@@ -6,12 +6,31 @@ body{
     height:auto;
 }
 
-.brand-heading h3{
-    display: inline-block;
-    padding: 0.7rem 5rem;    
-    font:2.2rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    border: 1px solid rgb(39, 44, 37);
-    border-radius: 2rem;
-    
+.ghg-all {
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 7px 12px;
 }
+.gh-title::after{
+    content: '';
+    background-color: #8db654;
+    width: 100px;
+    display: block;
+    height: 4px;
+    margin-top: 6px;
+    }
+    
+    .gh-title {
+      font-size: 25px;
+      position: relative;
+      color: #030306;
+      font-weight: 500;
+      margin-top: 0;
+      margin-left: 16px;
+      margin-bottom: 24px;
+    }
+    .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+   }
+   
