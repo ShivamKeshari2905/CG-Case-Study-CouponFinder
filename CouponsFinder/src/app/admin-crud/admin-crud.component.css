@@ -2,6 +2,9 @@ body{
     margin-top:20px;
     background:#f8f8f8
 }
+.card{
+    height:auto;
+}
 
 .brand-heading h3{
     display: inline-block;
