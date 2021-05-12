@@ -1,9 +1,12 @@
-.grey-bg {  
+.grey-bg {
     background-color: #F5F7FA;
 }
-.card{
+
+.card {
     transition: 0.3s ease;
+    border-radius: 4px;
 }
-.card:hover{
+
+.card:hover {
     box-shadow: 0 0 10px 0 black;
 }

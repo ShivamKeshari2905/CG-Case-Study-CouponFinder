@@ -1,7 +1,8 @@
-input[type='search']{
-    width:300px;
+input[type='search'] {
+    width: 300px;
 }
-.design{
+
+.design {
     text-align: center;
     color: #700303;
 }

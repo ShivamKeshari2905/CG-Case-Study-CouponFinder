@@ -1,4 +1,3 @@
-
 <!--<section id="labels">
     <div class="container">
       <div class="row">
@@ -120,40 +119,43 @@
       </div>
     </div>
   </section>-->
-  <div class="card text-center mt-2" *ngIf="coupon">
-    <div class="card-header">
-      <h3>Coupon: {{coupon.couponName || ''}}</h3>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{coupon.couponName}}</h5>
-      <p class="card-text">{{coupon.couponDescription}}</p>
-      <p class="card-text" *ngIf="coupon.couponDiscountType === 'Rs'">Offer: {{coupon.couponDiscountType}} {{coupon.couponDiscount}}</p>
-      <p class="card-text" *ngIf="coupon.couponDiscountType === '%'">Offer: {{coupon.couponDiscount}}{{coupon.couponDiscountType}}</p>
-      <p class="code">{{coupon.couponCode}}</p><br>
-      <a class="btn btn-primary" (click) = "copyToClipboard(coupon.couponCode)" data-toggle="modal" data-target="#myModal">Copy</a>
-    </div>
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <p><strong>Code Copied</strong></p>
-          </div>
+<div class="card text-center mt-2" *ngIf="coupon">
+  <div class="card-header">
+    <h3>Coupon: {{coupon.couponName || ''}}</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{coupon.couponName}}</h5>
+    <p class="card-text">{{coupon.couponDescription}}</p>
+    <p class="card-text" *ngIf="coupon.couponDiscountType === 'Rs'">Offer: {{coupon.couponDiscountType}}
+      {{coupon.couponDiscount}}</p>
+    <p class="card-text" *ngIf="coupon.couponDiscountType === '%'">Offer:
+      {{coupon.couponDiscount}}{{coupon.couponDiscountType}}</p>
+    <p class="code">{{coupon.couponCode}}</p><br>
+    <a class="btn btn-primary" (click)="copyToClipboard(coupon.couponCode)" data-toggle="modal"
+      data-target="#myModal">Copy</a>
+  </div>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Code Copied</strong></p>
         </div>
       </div>
     </div>
-    <div class="card-footer text-muted">
-      Use this Code In Website While CheckOut
-    </div>
   </div>
+  <div class="card-footer text-muted">
+    Use this Code In Website While CheckOut
+  </div>
+</div>
 
-  <div class="card text-center mt-2" *ngIf="!coupon">
-    <div class="card-header">
-      <h3>Uh Oh Seems an error</h3>
-    </div>
-    <div class="card-body">
-      <p class="code">Sorry the coupon code is not available right now!</p><br>
-    </div>
+<div class="card text-center mt-2" *ngIf="!coupon">
+  <div class="card-header">
+    <h3>Uh Oh Seems an error</h3>
   </div>
+  <div class="card-body">
+    <p class="code">Sorry the coupon code is not available right now!</p><br>
+  </div>
+</div>
