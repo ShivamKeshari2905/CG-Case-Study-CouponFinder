@@ -7,15 +7,15 @@ exports.sendEmailToSubscriber = async (receiverEmail, msg = null) => {
         port: 465,
         host: "smtp.gmail.com",
         auth: {
-            user: 'shimlayatra@gmail.com',
-            pass: 'Shimla@123',
+            user: '',//Add Your Email
+            pass: '',//Add Your Password
         },
         secure: true, // upgrades later with STARTTLS -- change this based on the PORT
       });
     
     // We shall define our mail data
     const mailData = {
-        from: 'shimlayatra@gmail.com',
+        from: '',//Add Email
         to: receiverEmail,
         subject: 'Subscription to My Newsletter',
         text: '',

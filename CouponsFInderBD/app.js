@@ -43,7 +43,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 //Connect to mongoDb
-const dbURI = 'mongodb+srv://Shivam:Shivam@shivamcluster.zu4cj.mongodb.net/Shivam?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://<clustername>:<password>@shivamcluster.zu4cj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 db.mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 .then((result) => {console.log('connected to db');
 
